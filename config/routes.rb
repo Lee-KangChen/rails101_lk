@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :groups do
-    resources :posts
+    member do
+      post :join
+      post :quit
   end
   root 'groups#index'
   # The priority is based upon order of creation: first created -> highest priority.
